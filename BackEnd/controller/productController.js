@@ -40,3 +40,40 @@ export const updateProduct = async(req,res) => {
     })
 }
 
+// Delete Product
+export const deleteProduct = async(req,res) => {
+    try {
+        let product = await Product.findById(req.params.id);
+        if(!product){
+            return res.status(404).json({ 
+                success : false,
+                message : "Product Not Found"
+            })
+        }
+        await Product.findByIdAndDelete(req.params.id)
+        res.status(200).json({
+            message : "Product Deleted Successfully",
+        })
+    } catch (error) {
+        res.status(500).json({ success: false, message: error.message })
+    }
+}
+
+// Accessing Single Product
+export const getSingleProduct = async(req,res) => {
+    try {
+        const product = await Product.findById(req.params.id); 
+        if(!product){
+            return res.status(500).json({ 
+                success : false,
+                message : "Product Not Found"
+            })
+        }
+        res.status(200).json({
+            success : true,
+            product
+        })
+    } catch (error) {
+        res.status(500).json({ success: false, message: error.message })
+    }
+}
