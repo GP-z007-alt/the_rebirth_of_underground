@@ -1,4 +1,5 @@
 import Product from '../models/productModel.js'
+import HandleError from '../Utils/handleError.js';
 
 // Creating Products
 export const createProducts = async(req,res)=>{
@@ -19,33 +20,27 @@ export const getAllProducts = async(req,res) => {
     })
 }
 // Update Product
-export const updateProduct = async(req,res) => {
+export const updateProduct = async(req,res,next) => {
     const product = await Product.findByIdAndUpdate(req.params.id, req.body, {
         new : true,
         runValidators : true,
         useFindAndModify : false
     })
     if(!product){
-        return res.status(500).json({
-            sucess : false,
-            message : "Product Not Found"
-        })
+        return next(new HandleError("Product Not Found", 404))
     }
     res.status(200).json({
         message : "Product Updated Successfully",
-            product
+        product
     })
 }
 
 // Delete Product
-export const deleteProduct = async(req,res) => {
+export const deleteProduct = async(req,res,next) => {
     try {
         let product = await Product.findById(req.params.id);
         if(!product){
-            return res.status(404).json({ 
-                success : false,
-                message : "Product Not Found"
-            })
+            return next(new HandleError("Product Not Found", 404))
         }
         await Product.findByIdAndDelete(req.params.id)
         res.status(200).json({
@@ -57,14 +52,11 @@ export const deleteProduct = async(req,res) => {
 }
 
 // Accessing Single Product
-export const getSingleProduct = async(req,res) => {
+export const getSingleProduct = async(req,res,next) => {
     try {
         const product = await Product.findById(req.params.id); 
         if(!product){
-            return res.status(500).json({ 
-                success : false,
-                message : "Product Not Found"
-            })
+            return next(new HandleError("Product Not Found", 404))
         }
         res.status(200).json({
             success : true,
