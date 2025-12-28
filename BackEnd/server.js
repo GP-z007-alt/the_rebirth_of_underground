@@ -3,6 +3,13 @@ import dotenv from 'dotenv';
 import { connectMongoDatabase } from './config/db.js';
 dotenv.config({path:'BackEnd/config/config.env'})
 connectMongoDatabase();
+// Handle Uncaught Exception
+process.on('uncaughtException',(err)=>{
+    console.log(`Error: ${err.message}`);
+    console.log(`Shutting down the server due to Uncaught Exception`);
+    process.exit(1);
+})
+
 const port = process.env.PORT || 3000;
 
 const server = app.listen(port,()=>{

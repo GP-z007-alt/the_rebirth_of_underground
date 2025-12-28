@@ -2,6 +2,8 @@ import Product from '../models/productModel.js'
 import HandleError from '../Utils/handleError.js';
 import handleAsyncError from '../Middleware/handleAsyncError.js';
 
+// http://localhost:8000/api/v1/product/6950617dc1a3f8d5fe598f0e?keyword=GUN1
+
 // Creating Products
 export const createProducts = handleAsyncError(async(req,res,next)=>{
     // console.log(req.body)
