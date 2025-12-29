@@ -2,10 +2,12 @@ import express from 'express';
 import product from './routes/productRoutes.js';
 import errorHandleMiddleware from './Middleware/error.js';
 import user from './routes/userRoutes.js';
+import cookieParser from 'cookie-parser';
 const app = express();
 
 // Middleware
 app.use(express.json());
+app.use(cookieParser());
 
 // Route
 app.use("/api/v1" , product)

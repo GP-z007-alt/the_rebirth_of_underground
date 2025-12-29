@@ -42,19 +42,21 @@ const userSchema = new mongoose.Schema({
 {timestamps:true});
 
 // Password hashing
-userSchema.pre("save",async function(next){
-  this.password=await bcrypt.hash(this.password,10);
-  if(!this.isModified("password")){
+userSchema.pre("save", async function(next) {
+  if (!this.isModified("password")) {
     return next();
   }
-})
+  this.password = await bcrypt.hash(this.password, 10);
+  next();
+});
 
-userSchema.methods.getJWTToken=function(){
-  return jwt.sign({id:this._id},process.env.JWT_SECRET_KEY,{
-    expiresIn:process.env.JWT_EXPIRE
+userSchema.methods.getJWTToken = function() {
+  return jwt.sign({ id: this._id }, process.env.JWT_SECRET_KEY, {
+    expiresIn: process.env.JWT_EXPIRE,
   });
-}
-userSchema.methods.verifyPassword = async function(userEnteredPassword){
-  return await bcrypt.compare(userEnteredPassword,this.password);
-}
-export default mongoose.model("User", userSchema);
+};
+userSchema.methods.verifyPassword = async function(userEnteredPassword) {
+  return await bcrypt.compare(userEnteredPassword, this.password);
+};
+const User = mongoose.models.User || mongoose.model("User", userSchema);
+export default User;
