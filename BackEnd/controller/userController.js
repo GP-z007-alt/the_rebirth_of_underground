@@ -45,3 +45,22 @@ export const logout=handleAsyncError(async(req,res,next)=>{
         message:"Logged out successfully"
     });
 })
+
+// Reset Password
+export const requestPasswordReset=handleAsyncError(async(req,res,next)=>{
+    const {email} = req.body
+    const user = await User.findOne({email});
+    if(!user){
+        return next (new HandleError("User not found with this email",400));
+    }
+    let resetToken;
+    try{
+        resetToken=user.getResetPasswordToken();
+        await user.save({validateBeforeSave:false});
+        
+    }catch(error){
+        console.log(error);
+        
+        return next(new HandleError(`Could not generate reset token: ${error.message} , Please try again later!`,500));
+    }
+})
