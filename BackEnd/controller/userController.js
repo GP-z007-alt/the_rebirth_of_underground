@@ -47,7 +47,7 @@ export const logout=handleAsyncError(async(req,res,next)=>{
     });
 })
 
-// Reset Password
+// Forgot Password
 export const requestPasswordReset=handleAsyncError(async(req,res,next)=>{
     const {email} = req.body
     const user = await User.findOne({email});
@@ -84,3 +84,6 @@ export const requestPasswordReset=handleAsyncError(async(req,res,next)=>{
         return next (new HandleError(`Could not send email: ${error.message} , Please try again later!`,500));
     }
 })
+
+// Reset Password
+export const resetPassword=handleAsyncError(async(req,res,next)=>{});
