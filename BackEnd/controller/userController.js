@@ -63,4 +63,14 @@ export const requestPasswordReset=handleAsyncError(async(req,res,next)=>{
         
         return next(new HandleError(`Could not generate reset token: ${error.message} , Please try again later!`,500));
     }
+    const resetPasswordURL=`http://localhost/api/v1/reset/${resetToken}`;
+    const message = `Your password reset token is as follows:\n\n${resetPasswordURL}\n\nThis link will expire in 5 minutes.\n\nIf you have not requested this email, please ignore it.`;
+    try{
+
+    }catch(error){
+        user.resetPasswordToken=undefined;
+        user.resetPasswordExpire=undefined;
+        await user.save({validateBeforeSave:false});
+        return next (new HandleError(`Could not send email: ${error.message} , Please try again later!`,500));
+    }
 })
