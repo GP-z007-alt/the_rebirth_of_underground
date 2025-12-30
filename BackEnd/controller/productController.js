@@ -96,6 +96,37 @@ export const getSingleProduct = handleAsyncError(async(req,res,next) => {
     }
 })
 
+// Creating and updating products review
+export const createReviewForProduct = handleAsyncError(async(req,res,next) => {
+    const {rating, comment, productId} = req.body;
+
+    const review = {
+        user : req.user._id,
+        name : req.user.name,
+        rating : Number(rating),
+        comment
+    }
+    const product = await Product.findById(productId);
+    const reviewExists = product.reviews.find(review => review.user.toString() === req.user._id.toString());
+    if(reviewExists){
+        product.reviews.forEach( review => {
+            if(review.user.toString() === req.user.id.toString()){
+                review.comment = comment;
+                review.rating = rating;
+            }
+        })
+    }else{
+        product.reviews.push(review);
+    }
+    await product.save({validateBeforeSave : false});
+    res.status(200).json({
+        success : true,
+        product,
+        message : "Review added/updated successfully"
+    })
+    
+});
+
 // Admin - Get All Products
 export const getAdminProducts = handleAsyncError(async(req,res,next) => {
     const products = await Product.find();
