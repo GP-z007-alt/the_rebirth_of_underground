@@ -98,12 +98,12 @@ export const getSingleProduct = handleAsyncError(async(req,res,next) => {
 
 // Creating and updating products review
 export const createReviewForProduct = handleAsyncError(async(req,res,next) => {
-    const {rating, comment, productId} = req.body;
+    const {ratings, comment, productId} = req.body;
 
     const review = {
         user : req.user._id,
         name : req.user.name,
-        rating : Number(rating),
+        ratings : Number(ratings),
         comment
     }
     const product = await Product.findById(productId);
@@ -112,12 +112,19 @@ export const createReviewForProduct = handleAsyncError(async(req,res,next) => {
         product.reviews.forEach( review => {
             if(review.user.toString() === req.user.id.toString()){
                 review.comment = comment;
-                review.rating = rating;
+                review.ratings = ratings;
             }
         })
     }else{
         product.reviews.push(review);
+        
     }
+    product.numofReviews = product.reviews.length;
+    let sum = 0;
+    product.reviews.forEach( review => {
+        sum += review.ratings;
+    })
+    product.ratings = product.reviews.length > 0 ? sum / product.reviews.length : 0;
     await product.save({validateBeforeSave : false});
     res.status(200).json({
         success : true,
@@ -126,6 +133,20 @@ export const createReviewForProduct = handleAsyncError(async(req,res,next) => {
     })
     
 });
+
+// Getting reviews
+export const getProductReviews = handleAsyncError(async(req,res,next) => {
+    const product = await Product.findById(req.query.id);
+    if(!product){
+        return next(new HandleError("Product Not Found", 400))
+    }
+
+    res.status(200).json({
+        success : true,
+        reviews : product.reviews
+    })
+})
+
 
 // Admin - Get All Products
 export const getAdminProducts = handleAsyncError(async(req,res,next) => {
