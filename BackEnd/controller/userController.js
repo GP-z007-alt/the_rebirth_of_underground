@@ -134,3 +134,21 @@ export const updatePassword=handleAsyncError(async(req,res,next)=>{
     await user.save();
     sendToken(user,200,res);
 })
+
+// Updating User Profile
+export const updateProfile=handleAsyncError(async(req,res,next)=>{
+    const {name,email}=req.body;
+    const updateUserDetails={
+        name,
+        email
+    };
+    const user = await User.findByIdAndUpdate(req.user.id,updateUserDetails,{
+        new:true,
+        runValidators:true,
+    });
+    res.status(200).json({
+        success:true,
+        message:"Profile updated successfully",
+        user
+    });
+})
