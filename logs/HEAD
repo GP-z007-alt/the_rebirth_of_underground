@@ -1,0 +1,42 @@
+0000000000000000000000000000000000000000 c9d5bc91353688b4f3cb6a70e28d8f09daafc8c3 GP-z007-alt <gokulprasath05072007@gmail.com> 1766868752 +0530	commit (initial): RadMe
+c9d5bc91353688b4f3cb6a70e28d8f09daafc8c3 0000000000000000000000000000000000000000 GP-z007-alt <gokulprasath05072007@gmail.com> 1766868763 +0530	Branch: renamed refs/heads/main to refs/heads/main
+c9d5bc91353688b4f3cb6a70e28d8f09daafc8c3 c9d5bc91353688b4f3cb6a70e28d8f09daafc8c3 GP-z007-alt <gokulprasath05072007@gmail.com> 1766868763 +0530	Branch: renamed refs/heads/main to refs/heads/main
+c9d5bc91353688b4f3cb6a70e28d8f09daafc8c3 beb8709b506ed7f500270ab33399f849be81fdd5 GP-z007-alt <gokulprasath05072007@gmail.com> 1766869349 +0530	commit: Changed README
+beb8709b506ed7f500270ab33399f849be81fdd5 293cfc5fac0e8dc04c6002119d7865cc3db9e7d1 GP-z007-alt <gokulprasath05072007@gmail.com> 1766869650 +0530	commit: Added the base modules
+293cfc5fac0e8dc04c6002119d7865cc3db9e7d1 7d6daa02dcf8aed4801649296e82c2016b694bb4 GP-z007-alt <gokulprasath05072007@gmail.com> 1766870151 +0530	commit: Still installing basic stuff
+7d6daa02dcf8aed4801649296e82c2016b694bb4 b7c9fd369d2f80d16e6fe364b1c946bd22944af6 GP-z007-alt <gokulprasath05072007@gmail.com> 1766871130 +0530	commit: Code refactor [NORMAL]
+b7c9fd369d2f80d16e6fe364b1c946bd22944af6 6ad79ce8daaae74db9a5f02642a825a785da7347 GP-z007-alt <gokulprasath05072007@gmail.com> 1766871897 +0530	commit: Better structure
+6ad79ce8daaae74db9a5f02642a825a785da7347 32c47e1e30c4725b608f74159c1f970341c907b3 GP-z007-alt <gokulprasath05072007@gmail.com> 1766872489 +0530	commit: Connection made with DB
+32c47e1e30c4725b608f74159c1f970341c907b3 f6bd6b5629f7bafb8cb7e8e5277a71d70f05b748 GP-z007-alt <gokulprasath05072007@gmail.com> 1766873738 +0530	commit: Products schema
+f6bd6b5629f7bafb8cb7e8e5277a71d70f05b748 c79175c2700490b96831b02902c6dead8fbc7e11 GP-z007-alt <gokulprasath05072007@gmail.com> 1766874785 +0530	commit: Product getting and updating-> start
+c79175c2700490b96831b02902c6dead8fbc7e11 8f08bc4e97141cf9e783eb9da6b4b8536680888d GP-z007-alt <gokulprasath05072007@gmail.com> 1766875123 +0530	commit: Update product complete
+8f08bc4e97141cf9e783eb9da6b4b8536680888d 10cce79132e5afcf73025e8562567566b7c2153d GP-z007-alt <gokulprasath05072007@gmail.com> 1766875833 +0530	commit: del product success
+10cce79132e5afcf73025e8562567566b7c2153d 0123bc13c4f2b7cc783a3a45cfe07b60ac196bc1 GP-z007-alt <gokulprasath05072007@gmail.com> 1766876094 +0530	commit: get single product done
+0123bc13c4f2b7cc783a3a45cfe07b60ac196bc1 870bdc3a812cf25e30f42658fd0e757a3e7ee15a GP-z007-alt <gokulprasath05072007@gmail.com> 1766876942 +0530	commit: Started Middle ware and completed exception handing sort of
+870bdc3a812cf25e30f42658fd0e757a3e7ee15a 877ddbd5f40ad029e2c2d777809f76cb2a3a8626 GP-z007-alt <gokulprasath05072007@gmail.com> 1766877364 +0530	commit: Started asyn error
+877ddbd5f40ad029e2c2d777809f76cb2a3a8626 17ff45ffc2e5e43aa5c7925c7c6ad68c0e6be4fc GP-z007-alt <gokulprasath05072007@gmail.com> 1766877711 +0530	commit: Started promise exception error
+17ff45ffc2e5e43aa5c7925c7c6ad68c0e6be4fc 880a6673a3b44eb18bdd410dadf51a1d3cce8999 GP-z007-alt <gokulprasath05072007@gmail.com> 1766877934 +0530	commit: Uncaught exception error
+880a6673a3b44eb18bdd410dadf51a1d3cce8999 d18865156dd0c1b47fb23e403766f5d1dffed7bd GP-z007-alt <gokulprasath05072007@gmail.com> 1766951144 +0530	commit: APIFUNCTIOINALITY
+d18865156dd0c1b47fb23e403766f5d1dffed7bd 4b37bd141b28b05d0f0a777ea0f8cd9163ae1383 GP-z007-alt <gokulprasath05072007@gmail.com> 1766951756 +0530	commit: Filter Functionality
+4b37bd141b28b05d0f0a777ea0f8cd9163ae1383 ee6b5688adc8786cc411a0091fc66dc5b36e3cdb GP-z007-alt <gokulprasath05072007@gmail.com> 1766952934 +0530	commit: Starting User schema completed pagination =)
+ee6b5688adc8786cc411a0091fc66dc5b36e3cdb 1b274063cb10df2eda77faee51bb423b92e2f5a6 GP-z007-alt <gokulprasath05072007@gmail.com> 1767010328 +0530	commit: Started User Model
+1b274063cb10df2eda77faee51bb423b92e2f5a6 bfa76645200a0356648021d8facf98578b254b44 GP-z007-alt <gokulprasath05072007@gmail.com> 1767011615 +0530	commit: Start password hashing
+bfa76645200a0356648021d8facf98578b254b44 4e4799199b45e0047c102698ca322f4eadc2a623 GP-z007-alt <gokulprasath05072007@gmail.com> 1767021133 +0530	commit: JWTToken
+4e4799199b45e0047c102698ca322f4eadc2a623 834eac44cb0a185a9ea09a9034d09881cb67aafa GP-z007-alt <gokulprasath05072007@gmail.com> 1767022879 +0530	commit: User Login and cookies
+834eac44cb0a185a9ea09a9034d09881cb67aafa a7ec6bbaea06e09c4a578c68bc8bba5b3f5f2d9b GP-z007-alt <gokulprasath05072007@gmail.com> 1767049211 +0530	commit: UserAuthentication to get products
+a7ec6bbaea06e09c4a578c68bc8bba5b3f5f2d9b 8ccb27893d4251d046cae6e36afe7989d1565085 GP-z007-alt <gokulprasath05072007@gmail.com> 1767050123 +0530	commit: Started on authorization
+8ccb27893d4251d046cae6e36afe7989d1565085 27e3af969a2655ee06bca07b8c2898aa1572a6eb GP-z007-alt <gokulprasath05072007@gmail.com> 1767051177 +0530	commit: Start at reset password token
+27e3af969a2655ee06bca07b8c2898aa1572a6eb 8b3f7d58c1c4a30f75cfbc52680356b3d11469cd GP-z007-alt <gokulprasath05072007@gmail.com> 1767052087 +0530	commit: Reset Token
+8b3f7d58c1c4a30f75cfbc52680356b3d11469cd 63263ee86d2d773dbd6e34368c3cdf83bab8fd12 GP-z007-alt <gokulprasath05072007@gmail.com> 1767052814 +0530	commit: Started on generating reset password link
+63263ee86d2d773dbd6e34368c3cdf83bab8fd12 ee078d06f39688094c1c84ab81bbc04ad94b4f8c GP-z007-alt <gokulprasath05072007@gmail.com> 1767053155 +0530	commit: Created resetPassword [ UNTESTED ]
+ee078d06f39688094c1c84ab81bbc04ad94b4f8c 2603367fac93329c9e8dc6507b0aa2861ac8826d GP-z007-alt <gokulprasath05072007@gmail.com> 1767054909 +0530	commit: Password email sending done
+2603367fac93329c9e8dc6507b0aa2861ac8826d 71a0b953ed983860fceb930d8dfe85b3c264d32e GP-z007-alt <gokulprasath05072007@gmail.com> 1767055577 +0530	commit: Gotta sleep
+71a0b953ed983860fceb930d8dfe85b3c264d32e 6fdf6886730feefaccf41b1b21b7b55fb5772e1a GP-z007-alt <gokulprasath05072007@gmail.com> 1767056630 +0530	commit: Password change succesfull
+6fdf6886730feefaccf41b1b21b7b55fb5772e1a 762c8090a59523424743641b7a6a47839f019856 GP-z007-alt <gokulprasath05072007@gmail.com> 1767124570 +0530	commit: Update Password Complete
+762c8090a59523424743641b7a6a47839f019856 7a5384acf85ba60d6377ef26058af4fa00207950 GP-z007-alt <gokulprasath05072007@gmail.com> 1767124988 +0530	commit: Update user profile
+7a5384acf85ba60d6377ef26058af4fa00207950 da6643aa6bfae5b4e6ca4f4a8ed2c392f046f84d GP-z007-alt <gokulprasath05072007@gmail.com> 1767127059 +0530	commit: Admin super power
+da6643aa6bfae5b4e6ca4f4a8ed2c392f046f84d a148663825ce5433f0c3ee125ccb2c2c8181eb98 GP-z007-alt <gokulprasath05072007@gmail.com> 1767128377 +0530	commit: Review system
+a148663825ce5433f0c3ee125ccb2c2c8181eb98 45f31a7ef2c0ae3ed582f104cb15ba481ab6c087 GP-z007-alt <gokulprasath05072007@gmail.com> 1767129397 +0530	commit: Deleting product review started
+45f31a7ef2c0ae3ed582f104cb15ba481ab6c087 f702313ba8787d9f78419f90196eb3e1b19f7a1d GP-z007-alt <gokulprasath05072007@gmail.com> 1767209031 +0530	commit: Delete Review
+f702313ba8787d9f78419f90196eb3e1b19f7a1d 130c2a96bc47eb20f08341f4991e2aa9889e3d05 GP-z007-alt <gokulprasath05072007@gmail.com> 1767209971 +0530	commit: Order Model Created
+130c2a96bc47eb20f08341f4991e2aa9889e3d05 affebc0ddd2819fda60c6c1591de1a3f7cb20e68 GP-z007-alt <gokulprasath05072007@gmail.com> 1767210521 +0530	commit: Order Routes started
