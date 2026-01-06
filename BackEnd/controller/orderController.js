@@ -62,3 +62,53 @@ export const getAllOrders = handleAsyncError(async(req,res,next)=>{
         orders
     })
 })
+
+// Update Order Status 
+export const updateOrderStatus = handleAsyncError(async(req,res,next)=>{
+    const order = await Order.findById(req.params.id);
+    if(!order){
+        return next(new HandleError("Order Not Found with this Id",404));
+    }
+    if(order.orderStatus === "Delivered"){
+        return next(new HandleError("You have already delivered this order",400));
+    }
+    await Promise.all(order.orderItems.map(async(item)=>{
+        await updateStock(item.product,item.quantity);
+    }))
+    order.orderStatus = req.body.status;
+    if(req.body.status === "Delivered"){
+        order.deliveredAt = Date.now();
+    }
+    await order.save({validateBeforeSave : false});
+    res.status(200).json({
+        success : true,
+        message : "Order Status Updated Successfully",
+        order
+    })
+})
+
+async function updateQuantity(id,quantity){
+    const product = await Product.findById(id);
+    if(!product){
+        return next(new HandleError("Product not found",404));
+    }
+    product.stock -= quantity;
+    await product.save({validateBeforeSave : false});
+    
+}
+
+// Delete Order -- Admin
+export const deleteOrder = handleAsyncError(async(req,res,next)=>{
+    const order = await Order.findById(req.params.id);
+    if(!order){
+        return next(new HandleError("Order Not Found with this Id",404));
+    }
+    if(order.orderStatus !== "Delivered"){
+        return next(new HandleError("Cannot delete an undelivered order",400));
+    }
+    await Order.deleteOne({_id:req.params.id});
+    res.status(200).json({
+        success : true,
+        message : "Order Deleted Successfully"
+    })
+})
