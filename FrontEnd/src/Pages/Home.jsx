@@ -1,10 +1,9 @@
 import React from 'react'
+import Footer from '../components/Footer'
 
 const Home = () => {
   return (
-    <div>
-      <h1>Welcome to UnderGround Mafia</h1>
-    </div>
+    <Footer/> 
   )
 }
 
