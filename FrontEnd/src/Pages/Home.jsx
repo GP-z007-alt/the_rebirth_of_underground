@@ -4,6 +4,7 @@ import '../pageStyles/Home.css'
 import NavBar from '../components/NavBar'
 import ImageSlider from '../components/ImageSlider'
 import Product from '../components/product'
+import PageTitle from '../components/PageTitle'
 const  products=[ 
         {
             "_id": "6950617dc1a3f8d5fe598f0e",
@@ -58,6 +59,7 @@ const  products=[
 const Home = () => {
   return (
     <>
+    <PageTitle title="Home"/>
     <NavBar/>
     <ImageSlider/>
     <div className="home-container">

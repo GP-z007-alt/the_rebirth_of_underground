@@ -25,7 +25,10 @@ const Product = ({product}) => {
                 disabled={true}
                 />
             </div>
-            <button className="add-to-cart">Add to Cart</button>
+            <span className="productCardSpan">
+                ( {product.numofReviews} {product.numofReviews === 1 ? ' Review' : ' Reviews' } )
+            </span>
+            <button className="add-to-cart">View Details</button>
         </div>
     </div>
     </Link>
